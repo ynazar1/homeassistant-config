@@ -53,7 +53,7 @@ logbook:
 
 # Community Store (works but slows down everything?)
 hacs:
-  token: 8951f9b15b92ce13fe0078d30722421b6c69ee7c
+  token: !secret hacs.token
 
 # Hue
 hue:
