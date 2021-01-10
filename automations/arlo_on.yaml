@@ -1,0 +1,11 @@
+alias: Arlo On from boolean
+initial_state: 'on'
+trigger:
+  - platform: state
+    entity_id: input_boolean.arlo_state
+    to: 'on'
+action:
+  - service: aarlo.alarm_set_mode
+    data:
+      entity_id: alarm_control_panel.aarlo_hayward_arlo
+      mode: 'armed'

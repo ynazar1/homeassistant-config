@@ -1,0 +1,24 @@
+alias: Office On via Camera
+trigger:
+  - entity_id: sensor.office_motion_detected
+    from: 'False'
+    platform: state
+    to: 'True'
+condition:
+  condition: and
+  conditions:
+    - entity_id: sensor.office_motion_detected
+      condition: state
+      state: 'True'
+    - entity_id: sensor.stairs_sensor_motion_up
+      condition: state
+      state: 'on'
+    - after: '17:00'
+      before: '00:00'
+      condition: time
+action:
+- alias: ''
+  service: homeassistant.turn_on
+  data:
+    entity_id:
+      - light.office

@@ -1,0 +1,7 @@
+name: Sensors
+entities:
+  - binary_sensor.stairs_sensor_motion_up_2
+  - binary_sensor.stairs_sensor_motion_down_2
+  - sensor.downstairs_hall_temperature
+  - sensor.upstairs_hall_temperature
+  - sensor.vision_zp3111_multisensor_4in1_temperature

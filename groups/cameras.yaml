@@ -1,0 +1,5 @@
+name: Home Cameras
+entities:
+  - camera.baby_crib
+  - camera.living_room
+  - camera.office

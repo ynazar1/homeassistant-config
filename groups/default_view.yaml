@@ -1,0 +1,6 @@
+entities:
+  - group.cameras
+  - group.hue_sensors
+  - group.weather
+  - group.hue_lights
+  - weather.dark_sky

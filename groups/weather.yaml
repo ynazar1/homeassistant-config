@@ -1,0 +1,8 @@
+name: Weather and Sun
+entities:
+  - sensor.time 
+  - sun.sun
+  - sensor.weather_symbol
+  - sensor.dark_sky_temperature
+  - sensor.dark_sky_wind_speed
+  - sensor.dark_sky_humidity

@@ -1,0 +1,9 @@
+aarlo:
+  username: !secret arlo.user
+  password: !secret arlo.pass
+  reconnect_every: 55
+  refresh_devices_every: 1
+  stream_timeout: 75
+
+alarm_control_panel:
+  - platform: aarlo

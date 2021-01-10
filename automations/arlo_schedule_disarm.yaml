@@ -1,0 +1,16 @@
+alias: Arlo schedule disarm
+initial_state: 'on'
+trigger:
+  platform: time
+  at: '9:00'
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: 'device_tracker.oneplus'
+      state: 'home'
+action:
+  - service: input_boolean.turn_off
+    data:
+      entity_id: input_boolean.arlo_state
+

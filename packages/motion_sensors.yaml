@@ -1,0 +1,40 @@
+#binary_sensor:
+#  - platform: huesensor
+
+#remote:
+#  - platform: huesensor
+#device_tracker:
+#  - platform: huesensor
+
+#binary_sensor:
+#  - platform: huesensor
+#    ip_address: !secret hue.ipaddr
+#    token: !secret hue.token
+#device_tracker:
+#  - platform: huesensor
+#    ip_address: !secret hue.ipaddr
+#    token: !secret hue.token
+#sensor:
+#  - platform: huesensor
+#    ip_address: !secret hue.ipaddr
+#    token: !secret hue.token 
+
+# Light level... 
+sensor:
+  - platform: template
+    sensors:
+#      upstairs_hall_temperature:
+#        friendly_name: 'Upstairs Temperature'
+#        value_template: '{{state_attr("binary_sensor.stairs_sensor_motion_up_2", "temperature")}}'
+#        unit_of_measurement: °C
+#      downstairs_hall_temperature:
+#        friendly_name: 'Downstairs Temperature'
+#        value_template: '{{state_attr("binary_sensor.stairs_sensor_motion_down_2", "temperature")}}'
+#        unit_of_measurement: °C
+#      hallway_brightness:
+#        friendly_name: 'Hallway Brightness (avg)'
+#        value_template: '{{ ((float(state_attr("binary_sensor.stairs_sensor_motion_down_2", "lx")) + float(state_attr("binary_sensor.stairs_sensor_motion_up_2", "lx"))) / 2) | round (2)}}'
+      hallway_brightness:
+        friendly_name: 'Hallway Brightness (avg)'
+        value_template: '{{ ((float(states("sensor.stairs_sensor_down_light_level")) + float(states("sensor.stairs_sensor_up_light_level"))) / 2) | round (2)}}'
+        unit_of_measurement: 'lx'

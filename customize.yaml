@@ -1,0 +1,16 @@
+group.all_devices:
+  hidden: false
+group.all_automations:
+  friendly_name: Automations
+  hidden: false
+group.all_lights:
+  friendly_name: Misc Lights
+  hidden: false
+group.all_remotes:
+  friendly_name: Remotes
+  hidden: false
+light.office:
+  friendly_name: Office Light Group
+light.stairs:
+  friendly_name: Stairs Lights Group
+

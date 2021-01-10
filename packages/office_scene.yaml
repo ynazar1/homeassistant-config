@@ -1,0 +1,45 @@
+script:
+  set_hue_scene:
+    alias: Set Hue scene
+    sequence:
+      - service: hue.hue_activate_scene
+        data_template:
+          group_name: '{{ states.input_select.hue_groups.state }}'
+          scene_name: '{{ states.input_select.hue_scenes.state }}'
+
+group:
+  hue_light_control:
+    name: Hue Light Control
+    icon: mdi:spotlight
+    entities:
+      - input_select.hue_scenes
+      - input_select.hue_groups
+      - script.set_hue_scene
+#      - input_boolean.party_mode
+
+input_select:
+  hue_scenes:
+    name: Select Hue Scenes
+    icon: mdi:creation #palette
+    options:
+    - Arctic aurora
+    - Bright
+    - Concentrate
+    - Cool white
+    - Dimmed
+    - Energize
+    - Nightlight
+    - Read
+    - Relax
+    - Savanna sunset
+    - Spring blossom
+    - Tropical twilight
+    initial: Arctic aurora
+
+  hue_groups:
+    name: Select Hue Group
+    icon: mdi:group
+    options:
+      - Office
+      - Hallway
+

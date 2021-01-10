@@ -1,0 +1,21 @@
+alias: Stairs Motion Restarts Timer
+initial_state: 'on'
+trigger:
+  - platform: state
+    entity_id: binary_sensor.stairs_sensor_down_motion
+    to: 'on'
+  - platform: state
+    entity_id: binary_sensor.stairs_sensor_up_motion
+    to: 'on'
+#condition:
+#  condition: or
+#  conditions:
+#    condition: state
+#    entity_id: timer.stairs
+#    state: 'active'
+action:
+  service: timer.start
+  data:
+    entity_id: timer.stairs
+
+

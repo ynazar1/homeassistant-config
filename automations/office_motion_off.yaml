@@ -1,0 +1,26 @@
+alias: Office lights Off via sensor
+initial_state: 'on'
+trigger:
+#  - platform: state
+#    entity_id: sensor.vision_zp3111_multisensor_4in1_alarm_level
+#    to: '0'
+#    for:
+#      minutes: 5
+#  - platform: state
+#    entity_id: sensor.vision_zp3111_multisensor_4in1_burglar
+#    to: '0'
+#    for:
+#      minutes: 5
+  - platform: state
+    entity_id: sensor.zooz_zse40_4_in_1_sensor_alarm_level
+    to: '0'
+    for:
+      minutes: 5
+  - platform: state
+    entity_id: sensor.zooz_zse40_4_in_1_sensor_4in1_burglar
+    to: '0'
+    for:
+      minutes: 5
+action:
+  service: homeassistant.turn_off
+  entity_id: light.office

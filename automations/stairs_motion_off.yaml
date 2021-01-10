@@ -1,0 +1,11 @@
+alias: Stairs Off after 5 mins
+initial_state: 'on'
+trigger:
+  platform: event
+  event_type: timer.finished
+  event_data:
+    entity_id: timer.stairs
+action:
+  service: homeassistant.turn_off
+  entity_id: light.stairs
+

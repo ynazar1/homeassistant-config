@@ -1,0 +1,10 @@
+name: Hidden Stuff
+entities:
+  - binary_sensor.office_motion_detected
+  - group.all_devices
+  - group.all_automations
+  - group.all_lights
+  - group.all_remotes
+  - sensor.vision_zp3111_multisensor_4in1_burglar
+  - group.hue_light_control
+  - alarm_control_panel.aarlo_hayward_arlo

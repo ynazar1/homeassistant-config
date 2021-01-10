@@ -1,0 +1,31 @@
+# Track the sun
+sun:
+# Weather and time
+sensor:
+  - platform: weather_data
+    name: Weather
+    monitored_conditions:
+      - symbol
+  - platform: time_date
+    display_options:
+      - 'time'
+  - platform: template
+    sensors:
+      dark_sky_temperature:
+        friendly_name: 'Temperature'
+        value_template: '{{state_attr("weather.dark_sky", "temperature")}}'
+        unit_of_measurement: '°F'
+      dark_sky_humidity:
+        friendly_name: 'Humidity'
+        value_template: '{{state_attr("weather.dark_sky", "humidity")}}'
+        unit_of_measurement: '%'
+      dark_sky_wind_speed:
+        friendly_name: 'Windspeed'
+        value_template: '{{state_attr("weather.dark_sky", "wind_speed")}}'
+        unit_of_measurement: 'mi/h'
+
+weather:
+  - platform: darksky
+    api_key: 18261dddef0683e776e1b8b2ddc4d88e
+    mode: daily
+

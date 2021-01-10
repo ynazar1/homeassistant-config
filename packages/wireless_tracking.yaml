@@ -1,0 +1,6 @@
+device_tracker:
+  - platform: netgear
+    host:  !secret orbi.ip 
+    port:  !secret orbi.port
+    password: !secret orbi.pass
+    accesspoints: !secret orbi.ac_list

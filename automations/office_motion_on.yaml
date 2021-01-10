@@ -1,0 +1,32 @@
+alias: Office lights On via Sensor
+initial_state: 'on'
+trigger:
+#  - platform: state
+#    entity_id: sensor.vision_zp3111_multisensor_4in1_burglar
+#    to: '8'
+  - platform: state
+    entity_id: sensor.zooz_zse40_4_in_1_sensor_burglar
+    to: '8'
+#  - platform: state
+#    entity_id: sensor.vision_zp3111_multisensor_4in1_alarm_level
+#    to: '255'
+  - platform: state
+    entity_id: sensor.zooz_zse40_4_in_1_sensor_alarm_level
+    to: '255'
+condition:
+  condition: or
+  conditions:
+#    - condition: time
+#      after: '17:00'
+#      before: '8:00'
+#    - condition: numeric_state
+#      entity_id: sensor.vision_zp3111_multisensor_4in1_luminance
+#      below: 20
+    - condition: numeric_state
+      entity_id: sensor.zooz_zse40_4_in_1_sensor_luminance
+      below: 20
+action:
+  service: homeassistant.turn_on
+  data:
+    entity_id:
+      - light.office

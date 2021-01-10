@@ -1,0 +1,13 @@
+name: Hue Lights
+entities:
+  - light.office
+  - light.stairs
+  - light.behind_monitor
+  - light.office_1
+  - light.office_2
+  - light.upstairs_hall
+  - light.bedroom_gene
+  - light.stairs_1
+  - light.stairs_2
+  - light.stairs_3
+

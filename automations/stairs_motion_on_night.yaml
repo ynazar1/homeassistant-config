@@ -1,0 +1,25 @@
+alias: Stairs On via Sensor During the Night
+initial_state: 'on'
+trigger:
+  - platform: state
+    entity_id: binary_sensor.stairs_sensor_down_motion
+    to: 'on'
+  - platform: state
+    entity_id: binary_sensor.stairs_sensor_up_motion
+    to: 'on'
+condition:
+  condition: and
+  conditions:
+    - condition: time
+      after: '1:00'
+      before: '8:00'
+action:
+  - service: hue.hue_activate_scene
+    data:
+      group_name: "Stairs"
+      scene_name: "Nightlight"
+  - service: timer.start
+    data:
+      entity_id: timer.stairs
+
+

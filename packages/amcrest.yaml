@@ -1,0 +1,30 @@
+amcrest:
+  - host: !secret cam1.ipaddr
+    name: !secret cam1.name 
+    username: !secret cam1.user_name 
+    password: !secret cam1.pass 
+    stream_source: rtsp
+
+  - host: !secret cam2.ipaddr
+    name: !secret cam2.name 
+    username: !secret cam2.user_name 
+    password: !secret cam2.pass 
+    stream_source: rtsp
+
+  - host: !secret cam3.ipaddr
+    name: !secret cam3.name 
+    username: !secret cam3.user_name 
+    password: !secret cam3.pass 
+    stream_source: rtsp
+    binary_sensors:
+      - motion_detected
+#    switches:
+#      - motion_detection
+
+# - host: IP_ADDRESS_CAMERA_2
+#   username: YOUR_USERNAME
+#   password: YOUR_PASSWORD
+#   resolution: low
+#   stream_source: snapshot
+#   sensors:
+#     - ptz_preset
